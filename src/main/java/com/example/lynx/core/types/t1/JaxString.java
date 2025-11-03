@@ -8,6 +8,15 @@ public final class JaxString
 {
   private JaxString() { throw JaxForbiddenConstructorException.create(JaxString.class); }
 
+  public static final String EMPTY = "";
+  public static final String REDACTED = "REDACTED";
+
+  public static final String BACKSLASH = "\\";
+  public static final String ESCAPED_BACKSLASH = "\\\\";
+  
+  public static final String DOUBLE_QUOTE = "\"";
+  public static final String ESCAPED_DOUBLE_QUOTE = "\\\"";
+
   public static String require(String self) {
     return JaxEntity.require(self, String.class);
   }
