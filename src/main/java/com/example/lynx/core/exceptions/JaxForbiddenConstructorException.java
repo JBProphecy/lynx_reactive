@@ -8,11 +8,11 @@ public final class JaxForbiddenConstructorException extends JaxBasicRuntimeExcep
     super(message);
   }
 
-  // Generate Jax Forbidden Constructor Runtime Exception
+  // Create Jax Forbidden Constructor Runtime Exception
   /**
    * <h4>Function</h4>
    * <ul>
-   * <li>This method will generate an instance of {@link JaxForbiddenConstructorException}.</li>
+   * <li>This method will create an instance of {@link JaxForbiddenConstructorException}.</li>
    * </ul>
    * 
    * <h4>Returns</h4>
@@ -24,11 +24,11 @@ public final class JaxForbiddenConstructorException extends JaxBasicRuntimeExcep
     return new JaxForbiddenConstructorException("A constructor was called and that process is forbidden.");
   }
 
-  // Generate Jax Forbidden Constructor Runtime Exception
+  // Create Jax Forbidden Constructor Runtime Exception
   /**
    * <h4>Function</h4>
    * <ul>
-   * <li>This method will generate an instance of {@link JaxForbiddenConstructorException}.</li>
+   * <li>This method will create an instance of {@link JaxForbiddenConstructorException}.</li>
    * </ul>
    * 
    * <h4>Parameters</h4>
