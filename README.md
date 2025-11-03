@@ -77,4 +77,14 @@
 
 <p>I have a lot of work to do.</p>
 
+<code><strong>11/02/25 - 11:36 PM</strong></code>
+
+<p>I just finished working on the <code>compose.yaml</code> file. I commented out the stuff for MongoDB since I don't have that set up yet, but PostgresSQL and Redis are set up and functioning properly.</p>
+
+<code><strong>11/03/25 - 1:41 AM</strong></code>
+
+<p>I just added a core exception package and some core exceptions to go along with it.</p>
+
+<p>I spent more time than I'd like to admit determining the best way to handle the threat of the circular dependency that would arise if I haphazzardly used one of my core exceptions in the core exception package.</p>
+
 ---
