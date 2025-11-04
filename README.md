@@ -1,10 +1,10 @@
-## Lynx
+# **Lynx**
 
 <p>Welcome to Lynx!</p>
 
 ---
 
-## Details
+# **Details**
 
 <p><strong>Name:</strong> Lynx</p>
 <p><strong>Owner:</strong> Jack</p>
@@ -13,7 +13,7 @@
 
 ---
 
-## Spring Initializer
+# **Spring Initializer**
 
 **Project**
 - [ ] Gradle - Groovy
@@ -67,12 +67,50 @@
 - WebSocket
 - Spring Boot Actuator
 
-**Additional Dependencies (Spring Boot Starters Menu)**
-- Spring Security
+---
+
+<br />
+
+# **Flyway**
+
+### **Flyway Core**
+
+``` xml
+<dependency>
+  <groupId>org.flywaydb</groupId>
+  <artifactId>flyway-core</artifactId>
+</dependency>
+```
 
 ---
 
-## Comments
+### **Flyway PostgresSQL**
+
+``` xml
+<dependency>
+  <groupId>org.flywaydb</groupId>
+  <artifactId>flyway-database-postgresql</artifactId>
+</dependency>
+```
+
+### **Flyway Plugin**
+
+``` xml
+<plugin>
+  <groupId>org.flywaydb</groupId>
+  <artifactId>flyway-maven-plugin</artifactId>
+  <configuration>
+    <cleanDisabled>false</cleanDisabled>
+    <url>${env.PSQL_URL}</url>
+    <user>${env.PSQL_USERNAME}</user>
+    <password>${env.PSQL_PASSWORD}</password>
+  </configuration>
+</plugin>
+```
+
+---
+
+# **Comments**
 
 <code><strong>11/02/2025</strong></code>
 
@@ -105,5 +143,9 @@
 <p>The new project structure I tried with the names and numbers was a failure. It became extremely difficult to find anything, and moving one thing could mean that I need to move a bunch of things up or down levels. Overall, no bueno. However, I evolved the idea into a new concept... one where I use convential package names, but also use single-letter package names in specific places for the same effect I intended to achieve. I tried nesting the single-letter packages, spacing them beteween the conventional package names, but the same issue as before was the result of that. My new implementation is manifested by using the single-letter package names sparingly, per package that benefits from it, like my <code>core</code> package.</p>
 
 <p>One key realization I've had with this structure is that a file that depends on another file doesn't have to be defined in a new package with an incremented letter... if it makes sense for those files to live together, then they should live together in the same package and never be separated.</p>
+
+<code><strong>11/04/2025 - 2:47 AM</strong></code>
+
+<p>I had to exclude some things in my dependency list to get rid of tomcat so I can use netty. With that, I had to change a few things in my configuration files to support that change. I added Flyway to the project and that's all set up and functional now. I also added some postgres entities.</p>
 
 ---
