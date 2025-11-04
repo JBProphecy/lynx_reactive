@@ -1,3 +1,35 @@
 spring:
   application:
     name: lynx
+
+tokens:
+  account-access-token:
+    duration: 10m
+  account-refresh-token:
+    duration: 30m # I want this to be 30 minutes.
+  profile-access-token:
+    duration: 15m
+  profile-refresh-token:
+    duration: 30d # I want this to be 30 days.
+  session-token:
+    duration: 180d
+
+cookies:
+  account-refresh-token:
+    name: account_refresh_token
+    max-age: 30m # I want this to be 30 minutes.
+    secure: true
+    http-only: true
+    same-site: LAX
+  profile-refresh-token:
+    name: account_refresh_token
+    max-age: 30d # I want this to be 30 days.
+    secure: true
+    http-only: true
+    same-site: LAX
+  session-token:
+    name: session_token
+    max-age: 180d
+    secure: true
+    http-only: true
+    same-site: LAX
