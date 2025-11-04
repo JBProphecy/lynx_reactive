@@ -1,4 +1,4 @@
-package com.example.lynx.app.postgres.entites;
+package com.example.lynx.app.postgres.objects;
 
 import java.time.OffsetDateTime;
 
@@ -66,7 +66,7 @@ public final class JaxSessionToken
     return JaxToStringUtility.buildClassString(this.getClass(), id, value, created, updated, version);
   }
 
-  public static JaxSessionToken require(JaxSessionToken entity) {
-    return JaxEntity.require(entity, JaxSessionToken.class);
+  public static JaxSessionToken require(JaxSessionToken object) {
+    return JaxEntity.require(object, JaxSessionToken.class);
   }
 }
