@@ -100,4 +100,10 @@
 
 <p>I'm trying a new project structure with names and numbers. The goal is to eliminate the threat of circular dependencies and make it clear what everything depends on, so that whenever I change something down the line, I'll know what can and can't be affected by that change.</p>
 
+<code><strong>11/04/2025 - 12:36 AM</strong></code>
+
+<p>The new project structure I tried with the names and numbers was a failure. It became extremely difficult to find anything, and moving one thing could mean that I need to move a bunch of things up or down levels. Overall, no bueno. However, I evolved the idea into a new concept... one where I use convential package names, but also use single-letter package names in specific places for the same effect I intended to achieve. I tried nesting the single-letter packages, spacing them beteween the conventional package names, but the same issue as before was the result of that. My new implementation is manifested by using the single-letter package names sparingly, per package that benefits from it, like my <code>core</code> package.</p>
+
+<p>One key realization I've had with this structure is that a file that depends on another file doesn't have to be defined in a new package with an incremented letter... if it makes sense for those files to live together, then they should live together in the same package and never be separated.</p>
+
 ---
