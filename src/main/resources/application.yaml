@@ -1,6 +1,13 @@
 spring:
   application:
     name: lynx
+  r2dbc:
+    url: ${PSQL_URL}
+    username: ${PSQL_USERNAME}
+    password: ${PSQL_PASSWORD}
+  sql:
+    init:
+      mode: always
 
 tokens:
   account-access-token:
