@@ -1,7 +1,8 @@
-package com.example.lynx.back.packages.generation.wrapper.output;
+package com.example.lynx.app.wrapper.opaque.token.value;
 
 import com.example.lynx.core.e.wrapper.JaxWrapper;
 import com.example.lynx.core.e.wrapper.JaxWrapperUtils;
+import com.example.lynx.flex.a.utilities.JaxOpaqueTokenValueUtility;
 
 public final class JaxActualSessionTokenValue extends JaxWrapper<String>
 {
@@ -25,5 +26,13 @@ public final class JaxActualSessionTokenValue extends JaxWrapper<String>
 
   public static String extract(JaxActualSessionTokenValue wrapper, boolean required) {
     return JaxWrapperUtils.extract(wrapper, JaxActualSessionTokenValue.class, required);
+  }
+
+  public static JaxActualSessionTokenValue generate() {
+    return new JaxActualSessionTokenValue(JaxOpaqueTokenValueUtility.generate());
+  }
+
+  public JaxHashedSessionTokenValue hash() {
+    return JaxHashedSessionTokenValue.assign(JaxOpaqueTokenValueUtility.hash(this.extract()));
   }
 }

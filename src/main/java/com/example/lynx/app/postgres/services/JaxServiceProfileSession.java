@@ -1,5 +1,6 @@
 package com.example.lynx.app.postgres.services;
 
+import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
 import org.springframework.stereotype.Service;
 
 import com.example.lynx.app.postgres.objects.JaxProfileSession;
@@ -17,10 +18,15 @@ import reactor.core.publisher.Mono;
 public final class JaxServiceProfileSession
 {
   private final JaxRepositoryProfileSession repository;
+  private final R2dbcEntityTemplate template;
 
-  // ---------- Save & Delete ---------- //
+  // ---------- Insert, Update, Delete ---------- //
 
-  public Mono<JaxProfileSession> save(JaxProfileSession entity) {
+  public Mono<JaxProfileSession> insert(JaxProfileSession entity) {
+    return this.template.insert(entity);
+  }
+
+  public Mono<JaxProfileSession> update(JaxProfileSession entity) {
     return this.repository.save(JaxProfileSession.require(entity));
   }
 

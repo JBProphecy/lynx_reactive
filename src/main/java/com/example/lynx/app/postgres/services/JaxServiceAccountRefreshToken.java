@@ -1,11 +1,12 @@
 package com.example.lynx.app.postgres.services;
 
+import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
 import org.springframework.stereotype.Service;
 
 import com.example.lynx.app.postgres.objects.JaxAccountRefreshToken;
 import com.example.lynx.app.postgres.repositories.JaxRepositoryAccountRefreshToken;
+import com.example.lynx.app.wrapper.opaque.token.value.JaxHashedAccountRefreshTokenValue;
 import com.example.lynx.back.packages.generation.wrapper.output.JaxAccountRefreshTokenId;
-import com.example.lynx.back.packages.generation.wrapper.output.JaxHashedAccountRefreshTokenValue;
 
 import lombok.AllArgsConstructor;
 import reactor.core.publisher.Mono;
@@ -15,10 +16,15 @@ import reactor.core.publisher.Mono;
 public final class JaxServiceAccountRefreshToken
 {
   private final JaxRepositoryAccountRefreshToken repository;
+  private final R2dbcEntityTemplate template;
 
-  // ---------- Save & Delete ---------- //
+  // ---------- Insert, Update, Delete ---------- //
 
-  public Mono<JaxAccountRefreshToken> save(JaxAccountRefreshToken entity) {
+  public Mono<JaxAccountRefreshToken> insert(JaxAccountRefreshToken entity) {
+    return this.template.insert(entity);
+  }
+
+  public Mono<JaxAccountRefreshToken> update(JaxAccountRefreshToken entity) {
     return this.repository.save(JaxAccountRefreshToken.require(entity));
   }
 

@@ -4,7 +4,7 @@ import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
 
 import com.example.lynx.app.postgres.objects.JaxProfileRefreshToken;
-import com.example.lynx.back.packages.generation.wrapper.output.JaxHashedProfileRefreshTokenValue;
+import com.example.lynx.app.wrapper.opaque.token.value.JaxHashedProfileRefreshTokenValue;
 import com.example.lynx.back.packages.generation.wrapper.output.JaxProfileRefreshTokenId;
 
 import reactor.core.publisher.Mono;

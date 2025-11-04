@@ -6,8 +6,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+import com.example.lynx.app.wrapper.opaque.token.value.JaxHashedAccountRefreshTokenValue;
 import com.example.lynx.back.packages.generation.wrapper.output.JaxAccountRefreshTokenId;
-import com.example.lynx.back.packages.generation.wrapper.output.JaxHashedAccountRefreshTokenValue;
 import com.example.lynx.core.c.utility.types.JaxEntity;
 import com.example.lynx.core.c.utility.types.JaxString;
 import com.example.lynx.core.d.utilities.JaxToStringUtility;

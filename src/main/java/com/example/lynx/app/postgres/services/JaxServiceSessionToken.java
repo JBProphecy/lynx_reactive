@@ -1,10 +1,11 @@
 package com.example.lynx.app.postgres.services;
 
+import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
 import org.springframework.stereotype.Service;
 
 import com.example.lynx.app.postgres.objects.JaxSessionToken;
 import com.example.lynx.app.postgres.repositories.JaxRepositorySessionToken;
-import com.example.lynx.back.packages.generation.wrapper.output.JaxHashedSessionTokenValue;
+import com.example.lynx.app.wrapper.opaque.token.value.JaxHashedSessionTokenValue;
 import com.example.lynx.back.packages.generation.wrapper.output.JaxSessionTokenId;
 
 import lombok.AllArgsConstructor;
@@ -15,10 +16,15 @@ import reactor.core.publisher.Mono;
 public final class JaxServiceSessionToken
 {
   private final JaxRepositorySessionToken repository;
+  private final R2dbcEntityTemplate template;
 
-  // ---------- Save & Delete ---------- //
+  // ---------- Insert, Update, Delete ---------- //
 
-  public Mono<JaxSessionToken> save(JaxSessionToken entity) {
+  public Mono<JaxSessionToken> insert(JaxSessionToken entity) {
+    return this.template.insert(entity);
+  }
+
+  public Mono<JaxSessionToken> update(JaxSessionToken entity) {
     return this.repository.save(JaxSessionToken.require(entity));
   }
 

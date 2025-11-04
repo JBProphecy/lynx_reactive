@@ -1,7 +1,8 @@
-package com.example.lynx.back.packages.generation.wrapper.output;
+package com.example.lynx.app.wrapper.opaque.token.value;
 
 import com.example.lynx.core.e.wrapper.JaxWrapper;
 import com.example.lynx.core.e.wrapper.JaxWrapperUtils;
+import com.example.lynx.flex.a.utilities.JaxOpaqueTokenValueUtility;
 
 public final class JaxProfileAccessTokenValue extends JaxWrapper<String>
 {
@@ -25,5 +26,9 @@ public final class JaxProfileAccessTokenValue extends JaxWrapper<String>
 
   public static String extract(JaxProfileAccessTokenValue wrapper, boolean required) {
     return JaxWrapperUtils.extract(wrapper, JaxProfileAccessTokenValue.class, required);
+  }
+
+  public static JaxProfileAccessTokenValue generate() {
+    return new JaxProfileAccessTokenValue(JaxOpaqueTokenValueUtility.generate());
   }
 }

@@ -6,7 +6,7 @@ import org.springframework.web.reactive.config.CorsRegistry;
 import org.springframework.web.reactive.config.WebFluxConfigurer;
 
 @Configuration
-public class LocalWebConfig
+public class JaxConfigurationWeb
 {
   @Bean
   public WebFluxConfigurer localWebConfigurer()

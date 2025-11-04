@@ -14,7 +14,7 @@ import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 
 @Configuration
 @EnableWebFluxSecurity
-public class SecurityConfig
+public class JaxConfigurationSecurity
 {
   @Bean
   public CorsConfigurationSource corsConfigurationSource()
