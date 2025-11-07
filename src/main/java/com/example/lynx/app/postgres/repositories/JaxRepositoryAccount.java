@@ -4,7 +4,7 @@ import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
 
 import com.example.lynx.app.postgres.objects.JaxAccount;
-import com.example.lynx.back.packages.generation.wrapper.output.JaxAccountEmail;
+import com.example.lynx.app.wrapper.email.JaxAccountEmail;
 import com.example.lynx.back.packages.generation.wrapper.output.JaxAccountId;
 
 import reactor.core.publisher.Mono;

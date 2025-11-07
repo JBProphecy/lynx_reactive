@@ -1,4 +1,4 @@
-package com.example.lynx.app.packages.cookie;
+package com.example.lynx.flex.b.packages.http.cookie;
 
 import java.time.Duration;
 import java.util.ArrayList;

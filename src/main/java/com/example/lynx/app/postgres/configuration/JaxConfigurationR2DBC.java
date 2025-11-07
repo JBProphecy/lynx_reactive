@@ -9,6 +9,10 @@ import org.springframework.data.convert.CustomConversions.StoreConversions;
 import org.springframework.data.r2dbc.convert.R2dbcCustomConversions;
 import org.springframework.data.r2dbc.dialect.PostgresDialect;
 
+import com.example.lynx.app.postgres.converters.JaxConverterAccountEmail;
+import com.example.lynx.app.postgres.converters.JaxConverterAccountId;
+import com.example.lynx.app.postgres.converters.JaxConverterAccountName;
+import com.example.lynx.app.postgres.converters.JaxConverterHashedAccountPassword;
 import com.example.lynx.app.postgres.converters.JaxConverterHashedSessionTokenValue;
 import com.example.lynx.app.postgres.converters.JaxConverterSessionId;
 import com.example.lynx.app.postgres.converters.JaxConverterSessionName;
@@ -27,7 +31,15 @@ public class JaxConfigurationR2DBC
       new JaxConverterSessionTokenId.Reading(),
       new JaxConverterSessionTokenId.Writing(),
       new JaxConverterHashedSessionTokenValue.Reading(),
-      new JaxConverterHashedSessionTokenValue.Writing()
+      new JaxConverterHashedSessionTokenValue.Writing(),
+      new JaxConverterAccountEmail.Reading(),
+      new JaxConverterAccountEmail.Writing(),
+      new JaxConverterAccountName.Reading(),
+      new JaxConverterAccountName.Writing(),
+      new JaxConverterHashedAccountPassword.Reading(),
+      new JaxConverterHashedAccountPassword.Writing(),
+      new JaxConverterAccountId.Reading(),
+      new JaxConverterAccountId.Writing()
     );
     return new R2dbcCustomConversions(
       StoreConversions.of(PostgresDialect.INSTANCE.getSimpleTypeHolder(), converters),

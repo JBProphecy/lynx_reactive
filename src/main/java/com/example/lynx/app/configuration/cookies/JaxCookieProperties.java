@@ -5,10 +5,10 @@ import java.time.Duration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.bind.ConstructorBinding;
 
-import com.example.lynx.app.packages.cookie.JaxCookieName;
-import com.example.lynx.app.packages.cookie.JaxSameSitePolicy;
 import com.example.lynx.core.c.utility.types.JaxEntity;
 import com.example.lynx.core.d.utilities.JaxToStringUtility;
+import com.example.lynx.flex.b.packages.http.cookie.JaxCookieName;
+import com.example.lynx.flex.b.packages.http.cookie.JaxSameSitePolicy;
 
 public abstract class JaxCookieProperties
 {

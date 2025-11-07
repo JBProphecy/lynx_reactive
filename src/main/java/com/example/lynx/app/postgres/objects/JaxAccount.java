@@ -6,8 +6,9 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+import com.example.lynx.app.redis.models.JaxTemporaryAccountCache;
+import com.example.lynx.app.wrapper.email.JaxAccountEmail;
 import com.example.lynx.app.wrapper.password.JaxHashedAccountPassword;
-import com.example.lynx.back.packages.generation.wrapper.output.JaxAccountEmail;
 import com.example.lynx.back.packages.generation.wrapper.output.JaxAccountId;
 import com.example.lynx.back.packages.generation.wrapper.output.JaxAccountName;
 import com.example.lynx.core.c.utility.types.JaxEntity;
@@ -57,5 +58,15 @@ public final class JaxAccount
 
   public static JaxAccount require(JaxAccount object) {
     return JaxEntity.require(object, JaxAccount.class);
+  }
+
+  public static JaxAccount create(JaxTemporaryAccountCache jaxTemporaryAccountCache) {
+    final JaxAccountId id = JaxAccountId.generate();
+    final JaxAccountName name = jaxTemporaryAccountCache.getName();
+    final JaxAccountEmail email = jaxTemporaryAccountCache.getEmail();
+    final JaxHashedAccountPassword password = jaxTemporaryAccountCache.getPassword();
+    final OffsetDateTime created = OffsetDateTime.now();
+    final OffsetDateTime updated = created;
+    return new JaxAccount(id, name, email, password, created, updated);
   }
 }

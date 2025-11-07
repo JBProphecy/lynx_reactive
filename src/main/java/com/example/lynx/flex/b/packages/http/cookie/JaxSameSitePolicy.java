@@ -1,4 +1,4 @@
-package com.example.lynx.app.packages.cookie;
+package com.example.lynx.flex.b.packages.http.cookie;
 
 import com.example.lynx.core.c.utility.types.JaxString;
 import com.example.lynx.core.d.utilities.JaxToStringUtility;

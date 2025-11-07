@@ -1,0 +1,37 @@
+package com.example.lynx.app.services;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
+
+import com.example.lynx.back.packages.generation.wrapper.output.JaxEmail;
+
+import reactor.core.publisher.Mono;
+
+@Service
+public final class JaxReactiveEmailSenderService
+{
+  private final WebClient webClient;
+
+  public JaxReactiveEmailSenderService(WebClient.Builder builder) {
+    this.webClient = builder.baseUrl("https://api.sendgrid.com/v3/mail/send").build();
+  }
+
+  public Mono<Void> sendSimpleEmail(JaxEmail to, JaxEmail from, String subject, String body) {
+    Map<String, Object> requestBody = Map.of(
+      "personalizations", List.of(Map.of("to", List.of(Map.of("email", JaxEmail.extract(to))))),
+      "from", Map.of("email", JaxEmail.extract(from)),
+      "subject", subject,
+      "content", List.of(Map.of("type", "text/plain", "value", body))
+    );
+
+    return this.webClient.post()
+      .header("Authorization", "Bearer " + System.getenv("SENDGRID_API_KEY"))
+      .bodyValue(requestBody)
+      .retrieve()
+      .toBodilessEntity()
+      .then();
+  }
+}

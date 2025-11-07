@@ -1,4 +1,4 @@
-package com.example.lynx.app.api.services;
+package com.example.lynx.app.api.modules.generate_session;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

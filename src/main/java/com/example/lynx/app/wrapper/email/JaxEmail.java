@@ -1,9 +1,8 @@
-package com.example.lynx.back.packages.generation.wrapper.output;
+package com.example.lynx.app.wrapper.email;
 
-import com.example.lynx.core.e.wrapper.JaxWrapper;
 import com.example.lynx.core.e.wrapper.JaxWrapperUtils;
 
-public final class JaxEmail extends JaxWrapper<String>
+public final class JaxEmail extends JaxAbstractEmail
 {
   private JaxEmail(String input) { super(input); }
 

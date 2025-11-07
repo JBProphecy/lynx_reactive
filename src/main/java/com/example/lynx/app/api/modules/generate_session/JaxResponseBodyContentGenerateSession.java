@@ -1,4 +1,4 @@
-package com.example.lynx.app.response.body;
+package com.example.lynx.app.api.modules.generate_session;
 
 import com.example.lynx.app.wrapper.opaque.token.value.JaxActualSessionTokenValue;
 import com.example.lynx.core.c.utility.types.JaxString;

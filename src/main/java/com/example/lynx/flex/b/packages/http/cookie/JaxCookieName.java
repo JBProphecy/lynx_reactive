@@ -1,4 +1,4 @@
-package com.example.lynx.app.packages.cookie;
+package com.example.lynx.flex.b.packages.http.cookie;
 
 import com.example.lynx.core.e.wrapper.JaxWrapper;
 import com.example.lynx.core.e.wrapper.JaxWrapperUtils;

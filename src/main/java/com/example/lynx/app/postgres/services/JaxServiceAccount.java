@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.lynx.app.postgres.objects.JaxAccount;
 import com.example.lynx.app.postgres.repositories.JaxRepositoryAccount;
-import com.example.lynx.back.packages.generation.wrapper.output.JaxAccountEmail;
+import com.example.lynx.app.wrapper.email.JaxAccountEmail;
 import com.example.lynx.back.packages.generation.wrapper.output.JaxAccountId;
 
 import lombok.AllArgsConstructor;

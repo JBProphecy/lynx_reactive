@@ -1,7 +1,7 @@
 package com.example.lynx.app.redis.models;
 
+import com.example.lynx.app.wrapper.email.JaxAccountEmail;
 import com.example.lynx.app.wrapper.password.JaxHashedAccountPassword;
-import com.example.lynx.back.packages.generation.wrapper.output.JaxAccountEmail;
 import com.example.lynx.back.packages.generation.wrapper.output.JaxAccountName;
 import com.example.lynx.back.packages.generation.wrapper.output.JaxEmailVerificationCode;
 import com.example.lynx.core.c.utility.types.JaxEntity;

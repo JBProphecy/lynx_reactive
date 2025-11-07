@@ -1,5 +1,7 @@
 package com.example.lynx.back.packages.generation.wrapper.output;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import com.example.lynx.core.e.wrapper.JaxWrapper;
 import com.example.lynx.core.e.wrapper.JaxWrapperUtils;
 
@@ -25,5 +27,9 @@ public final class JaxEmailVerificationCode extends JaxWrapper<String>
 
   public static String extract(JaxEmailVerificationCode wrapper, boolean required) {
     return JaxWrapperUtils.extract(wrapper, JaxEmailVerificationCode.class, required);
+  }
+
+  public static JaxEmailVerificationCode generate() {
+    return JaxEmailVerificationCode.assign(String.format("%06d", ThreadLocalRandom.current().nextInt(0, 1000000)));
   }
 }
